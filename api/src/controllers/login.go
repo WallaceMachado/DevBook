@@ -9,7 +9,6 @@ import (
 	"api/src/repositorios"
 	"api/src/respostas"
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 )
@@ -52,7 +51,6 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		respostas.Erro(w, http.StatusInternalServerError, erro)
 		return
 	}
-	fmt.Println(token)
 
-	w.Write([]byte("você está logado"))
+	w.Write([]byte(token))
 }
