@@ -1,12 +1,15 @@
 package controllers
 
 import (
+	"api/autenticacao"
 	"api/seguranca"
+
 	"api/src/banco"
 	"api/src/models"
 	"api/src/repositorios"
 	"api/src/respostas"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 )
@@ -43,6 +46,13 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		respostas.Erro(w, http.StatusUnauthorized, erro)
 		return
 	}
+
+	token, erro := autenticacao.CriarToken(usuarioSalvoNoBanco.ID)
+	if erro != nil {
+		respostas.Erro(w, http.StatusInternalServerError, erro)
+		return
+	}
+	fmt.Println(token)
 
 	w.Write([]byte("você está logado"))
 }
