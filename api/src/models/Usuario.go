@@ -1,7 +1,7 @@
 package models
 
 import (
-	"api/seguranca"
+	"api/src/seguranca"
 	"errors"
 	"strings"
 	"time"

@@ -1,13 +1,12 @@
 package controllers
 
 import (
-	"api/autenticacao"
-	"api/seguranca"
-
+	"api/src/autenticacao"
 	"api/src/banco"
 	"api/src/models"
 	"api/src/repositorios"
 	"api/src/respostas"
+	"api/src/seguranca"
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
