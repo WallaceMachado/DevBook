@@ -23,5 +23,9 @@ func Configurar(router *mux.Router) *mux.Router {
 
 	}
 
+	// carregar os arquivos css e js
+	fileServer := http.FileServer(http.Dir("./assets/"))
+	router.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", fileServer))
+
 	return router
 }
