@@ -4,10 +4,13 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"webapp/src/router"
 )
 
 func main() {
 
 	fmt.Println("Escutando na porta 3000")
-	log.Fatal(http.ListenAndServe(":3000", nil))
+
+	r := router.Gerar()
+	log.Fatal(http.ListenAndServe(":3000", r))
 }
