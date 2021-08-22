@@ -55,6 +55,7 @@ func Ler(r *http.Request) (map[string]string, error) {
 
 // Deletar remove os valores armazenados no cookie
 func Deletar(w http.ResponseWriter) {
+
 	http.SetCookie(w, &http.Cookie{
 		Name:     "dados",
 		Value:    "",
