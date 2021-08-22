@@ -17,6 +17,13 @@ import (
 
 // FazerLogin utiliza o e-mail e senha do usuário para autenticar na aplicação
 func CarregarTelaDeLogin(w http.ResponseWriter, r *http.Request) {
+	cookie, _ := cookies.Ler(r)
+
+	if cookie["token"] != "" {
+		http.Redirect(w, r, "/home", 302)
+		return
+	}
+
 	utils.ExecutarTemplate(w, "login.html", nil)
 }
 
