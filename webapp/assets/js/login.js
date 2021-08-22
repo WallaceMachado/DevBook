@@ -13,6 +13,6 @@ function fazerLogin(evento) {
     }).done(function() {
         window.location = "/home";
     }).fail(function() {
-        alert("Erro ao cadastrar o usuário!", "error");
+        Swal.fire("Erro ao cadastrar o usuário!", "error");
     });
 }
