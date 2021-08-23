@@ -81,12 +81,16 @@
     </div>
 
 
-        
+    
+    
     {{ template "rodape" }}
     {{ template "scripts" }}
 
     <script src="/assets/js/publicacoes.js"></script>
     <script src="/assets/js/usuario.js"></script>
+
+    {{ template "modal-seguidores" .Usuario }}
+    {{ template "modal-seguindo" .Usuario }}
 </body>
 
 </html>
